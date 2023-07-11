@@ -43,11 +43,6 @@ class App(customtkinter.CTk):
         alert(title= "Ejercio IF 01", message= mensaje) 
             
         
-            
-
-        
-        
-    
 if __name__ == "__main__":
     app = App()
     app.geometry("300x300")

@@ -40,12 +40,7 @@ class App(customtkinter.CTk):
             mensaje = f"Usted no es adolescente porque tiene {edad} años"
         else:
             mensaje = f"Usted es adolescente porque tiene {edad} años"
-        alert(title= "Ejercicio IF 04", message= mensaje)
-
-
-
-        
-        
+        alert(title= "Ejercicio IF 05", message= mensaje)    
     
 if __name__ == "__main__":
     app = App()

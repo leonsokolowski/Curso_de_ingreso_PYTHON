@@ -30,7 +30,9 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        mensaje = random.randint(1,10)
+        numero_random = random.randint(1,10) #Se escribe desde que valor int hasta que otro.
+        #numero_random = random.randrange(1,10)
+        mensaje = f"El número aleatorio que le tocó fue {numero_random}"
         alert(title= "Ejercicio IF 09", message= mensaje)
         
 

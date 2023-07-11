@@ -8,7 +8,7 @@ import customtkinter
 Enunciado:
 
 2.	El departamento de Construcción Rural requiere una herramienta que facilite el calculo de materiales necesarios 
-a la hora de realizar un alambrado permetral, se le solicita al usuario que ingrese el ancho y el largo del terreno.
+a la hora de realizar un alambrado perimetral, se le solicita al usuario que ingrese el ancho y el largo del terreno.
 
     A. Informar los metros cuadrados del terreno y los metros lineales del perimetro
     B. Informar la cantidad de postes de quebracho Grueso de 2.4 mts (van cada 250 mts lineales y en las esquinas).
@@ -62,10 +62,38 @@ class App(customtkinter.CTk):
         
 
     def btn_calcular_on_click(self):
-        largo = int(self.txt_largo.get()) 
-        ancho = int(self.txt_ancho.get())
-        total_m2 = largo * ancho
-        alert(title="Alert", message="El resultado total de metros cuadrados es: " + str(total_m2))
+        largo = float(self.txt_largo.get())
+        ancho = float(self.txt_ancho.get())
+        #A
+        area = largo * ancho
+        perimetro = largo * 2 + ancho * 2
+        #B
+        cantidad_de_quebracho_grueso = 4 + (perimetro / 25)
+        #C
+        cantidad_de_quebracho_fino = perimetro / 12
+        #D
+        cantidad_de_varillas = perimetro / 2
+        #E
+        cantidad_de_alambre_mts = perimetro * 7
+        
+        #Alertas
+        #A
+        mensaje_a= f"Su terreno tiene un área de {area} mts2 y un perimetro de {perimetro} mts."
+        alert(title= "E/S TP 3", message=mensaje_a)
+        #B
+        mensaje_b= f"Necesitará {cantidad_de_quebracho_grueso} postes de quebracho grueso."
+        alert(title= "E/S TP 3", message=mensaje_b)
+        #C
+        mensaje_c= f"Necesitará {cantidad_de_quebracho_fino} postes de quebracho fino."
+        alert(title= "E/S TP 3", message=mensaje_c)
+        #D
+        mensaje_d= f"Necesitará {cantidad_de_varillas} de varillas."
+        alert(title= "E/S TP 3", message=mensaje_d)
+        #E
+        mensaje_e= f"Necesitará {cantidad_de_alambre_mts} mts de alambre."
+        alert(title= "E/S TP 3", message=mensaje_e)
+        
+        
     
     
 if __name__ == "__main__":

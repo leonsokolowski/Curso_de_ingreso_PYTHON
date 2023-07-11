@@ -48,18 +48,28 @@ class App(customtkinter.CTk):
         self.btn_total_iva.grid(row=5, pady=10, columnspan=2, sticky="nsew")
 
     def btn_total_on_click(self):
-        total = int(self.txt_importe_1.get()) + int(self.txt_importe_2.get()) + int(self.txt_importe_3.get())
-        alert(title="Alert", message="El resultado total sin iva es: " + str(total))
-
+        importe_1 = int(self.txt_importe_1.get())
+        importe_2 = int(self.txt_importe_2.get())
+        importe_3 = int(self.txt_importe_3.get())
+        total = importe_1 + importe_2 + importe_3
+        mensaje = f"La suma del precio de sus 3 productos es de {total} pesos"
+        alert(title= "E/S TP1", message= mensaje)
     def btn_promedio_on_click(self):
-        total = int(self.txt_importe_1.get()) + int(self.txt_importe_2.get()) + int(self.txt_importe_3.get())
-        promedio = total / 3
-        alert(title="Alert", message="El valor promedio es: " + str(promedio))
-
+        importe_1 = int(self.txt_importe_1.get())
+        importe_2 = int(self.txt_importe_2.get())
+        importe_3 = int(self.txt_importe_3.get())
+        promedio = (importe_1 + importe_2 + importe_3) / 3
+        mensaje = f"El promedio del precio de sus 3 productos es de {promedio} pesos"
+        alert(title= "E/S TP1", message= mensaje)
     def btn_total_iva_on_click(self):
-        total = int(self.txt_importe_1.get()) + int(self.txt_importe_2.get()) + int(self.txt_importe_3.get())
-        total_c_iva = total * 1.21
-        alert(title="Alert", message="El resultado total sin iva es: " + str(total_c_iva))        
+        importe_1 = int(self.txt_importe_1.get())
+        importe_2 = int(self.txt_importe_2.get())
+        importe_3 = int(self.txt_importe_3.get())
+        precio_total = importe_1 + importe_2 + importe_3
+        iva = (precio_total * 21) / 100
+        precio_total_mas_iva = precio_total + iva
+        mensaje = f"El promedio del precio de sus 3 productos es de {precio_total_mas_iva} pesos"
+        alert(title= "E/S TP1", message= mensaje)
     
 if __name__ == "__main__":
     app = App()

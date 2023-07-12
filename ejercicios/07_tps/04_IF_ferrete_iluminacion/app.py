@@ -38,9 +38,93 @@ class App(customtkinter.CTk):
 
 
     def btn_calcular_on_click(self):
-        pass
+        precio_lamparas = 800
+        marca_lamparas = self.combobox_marca.get()
+        cantidad_lamparas = int(self.combobox_cantidad.get())
+        precio_total = cantidad_lamparas * precio_lamparas
+#---------------------------------------------------------------------------------------------------------------------------------------------
+        # #A
+        # if (cantidad_lamparas >= 6):
+        #     descuento_a = (precio_total * 50) / 100
+        #     precio_con_descuento = precio_total - descuento_a
+        #     mensaje = f"Importe a pagar {precio_con_descuento}"
+        # #B
+        # elif (cantidad_lamparas == 5 and marca_lamparas == "ArgentinaLuz"):
+        #     descuento_b = (precio_total * 40) / 100
+        #     precio_con_descuento = precio_total - descuento_b
+        #     mensaje = f"Importe a pagar {precio_con_descuento}"
+        # elif (cantidad_lamparas == 5 and not(marca_lamparas == "ArgentinaLuz")):
+        #     descuento_b = (precio_total * 30) / 100
+        #     precio_con_descuento = precio_total - descuento_b
+        #     mensaje = f"Importe a pagar {precio_con_descuento}"
+        # #C
+        # elif (cantidad_lamparas == 4 and (marca_lamparas == "ArgentinaLuz" or marca_lamparas == "FelipeLamparas")):
+        #     descuento_c = (precio_total * 25) / 100
+        #     precio_con_descuento = precio_total - descuento_c
+        #     mensaje = f"Importe a pagar {precio_con_descuento}"
+        # elif (cantidad_lamparas == 4 and not(marca_lamparas == "ArgentinaLuz" or marca_lamparas == "FelipeLamparas")):
+        #     descuento_c = (precio_total * 20) / 100
+        #     precio_con_descuento = precio_total - descuento_c
+        #     mensaje = f"Importe a pagar {precio_con_descuento}"
+        # #D
+        # elif (cantidad_lamparas == 3 and marca_lamparas == "ArgentinaLuz"):
+        #     descuento_d = (precio_total * 15) / 100
+        #     precio_con_descuento = precio_total - descuento_d
+        #     mensaje = f"Importe a pagar {precio_con_descuento}"
+        # elif (cantidad_lamparas == 3 and marca_lamparas == "FelipeLamparas"):
+        #     descuento_d = (precio_total * 10) / 100
+        #     precio_con_descuento = precio_total - descuento_d
+        #     mensaje = f"Importe a pagar {precio_con_descuento}"
+        # elif (cantidad_lamparas == 3 and not(marca_lamparas == "ArgentinaLuz" or marca_lamparas == "FelipeLamparas")):
+        #     descuento_d = (precio_total * 5) / 100
+        #     precio_con_descuento = precio_total - descuento_d
+        #     mensaje = f"Importe a pagar {precio_con_descuento}"
+        # #E
+        # if (precio_con_descuento > 4000):
+        #     descuento_e = (precio_con_descuento *5) / 100
+        #     precio_final= precio_con_descuento - descuento_e
+        #     mensaje = f"Importe a pagar {precio_con_descuento}"
         
-    
+        # alert("IF TP 1", mensaje)  
+#---------------------------------------------------------------------------------------------------------------------------------------------
+        #A
+        if (cantidad_lamparas >= 6):
+            descuento_porcentual = 50
+        #B
+        elif (cantidad_lamparas == 5):
+            if (marca_lamparas == "ArgentinaLuz"):
+                descuento_porcentual = 40
+            else:
+                descuento_porcentual = 30
+        #C
+        elif (cantidad_lamparas == 4):
+            if (marca_lamparas == "ArgentinaLuz" or marca_lamparas == "FelipeLamparas"):
+                descuento_porcentual = 25
+            else:
+                descuento_porcentual = 20
+        #D
+        elif (cantidad_lamparas == 3):
+            if (marca_lamparas == "ArgentinaLuz"):
+                descuento_porcentual = 15
+            elif (marca_lamparas == "FelipeLamparas"):
+                descuento_porcentual = 10
+            else:
+                descuento_porcentual = 5
+        
+        descuento = (precio_total * descuento_porcentual) / 100
+        precio_con_descuento = precio_total - descuento
+        
+        #E
+        if (precio_con_descuento > 4000):
+            descuento = (precio_con_descuento * 5) / 100
+            precio_con_descuento_plus = precio_con_descuento - descuento
+            mensaje = f"Su importe a pagar es de {precio_con_descuento_plus}"
+        else:
+            mensaje = f"Su importe a pagar es de {precio_con_descuento}"
+        
+        alert("IF TP 1", mensaje)
+        
+  
 if __name__ == "__main__":
     app = App()
     app.geometry("300x300")

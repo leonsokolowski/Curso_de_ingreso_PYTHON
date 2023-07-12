@@ -62,12 +62,14 @@ class App(customtkinter.CTk):
                 descuento_porcentual = 25
             elif (cantidad_lamparas == 3):
                 descuento_porcentual = 10
-        elif (cantidad_lamparas == 5):
-            descuento_porcentual = 30
-        elif (cantidad_lamparas == 4):
-            descuento_porcentual = 20
-        elif (cantidad_lamparas == 3):
-            descuento_porcentual = 5
+        else: 
+            if(cantidad_lamparas == 5):
+                descuento_porcentual = 30
+            elif (cantidad_lamparas == 4):
+                descuento_porcentual = 20
+            elif (cantidad_lamparas == 3):
+                descuento_porcentual = 5
+
         
         descuento = (precio_total * descuento_porcentual) / 100
         precio_con_descuento = precio_total - descuento

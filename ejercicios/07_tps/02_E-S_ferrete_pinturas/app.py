@@ -5,6 +5,10 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
+nombre: León
+apellido: Sokolowski
+div: K
+
 Enunciado:
 
 2.	Para el departamento de Pinturas:

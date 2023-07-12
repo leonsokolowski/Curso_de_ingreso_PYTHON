@@ -5,6 +5,10 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
+nombre: León
+apellido: Sokolowski
+div: K
+
 Todas las lámparas están  al mismo precio de $800 pesos final.
 		A.	Si compra 6 o más  lamparitas bajo consumo tiene un descuento del 50%. 
 		B.	Si compra 5  lamparitas bajo consumo marca "ArgentinaLuz" se hace un descuento del 40 % y si es de otra marca el descuento es del 30%.

@@ -33,7 +33,7 @@ class App(customtkinter.CTk):
         
         clave = prompt("Contraseña", "Ingrese clave")
     
-        while clave == None or not clave.isalpha() and clave is not "utn750":
+        while clave is not "utn750":
             alert("Ejercicio While 03", "Clave incorrecta")
             clave = prompt("Clave", "Ingrese clave valida")
         

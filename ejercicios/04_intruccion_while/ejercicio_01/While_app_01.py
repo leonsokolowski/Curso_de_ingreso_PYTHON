@@ -36,6 +36,9 @@ class App(customtkinter.CTk):
         while contador < 10:
             contador += 1
             alert("Ejercicio While 01", contador)
+        
+        # for i in range(11):
+        #     alert("Ejercicio While 01", i)
     
     
 if __name__ == "__main__":

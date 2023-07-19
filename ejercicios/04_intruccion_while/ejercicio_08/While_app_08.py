@@ -45,16 +45,18 @@ class App(customtkinter.CTk):
             numero = (prompt("Ingrese Número", "Ingrese un número"))
             if numero is None or numero == 0:
                 break
-            numero = int(numero)
-            contador += 1
-            
-            if numero > 0:
-                suma_acumulada += numero
-            elif numero < 0:
-                if producto == None:
-                    numero = producto
+            else: 
+                numero = int(numero)
+                contador += 1
+                if numero > 0:
+                    suma_acumulada += numero
                 else:
-                    producto = producto * numero
+                    if producto == None:
+                        producto = numero
+                    else:
+                        producto *= numero        
+            continuar = question ("¿Quiere seguir?", "¿Quiere seguir ingresando números?")  
+        
         
         self.txt_suma_acumulada.delete(0, 150)
         self.txt_suma_acumulada.insert(0, suma_acumulada)

@@ -83,7 +83,7 @@ class App(customtkinter.CTk):
         
         #4
         cantidad_exc = prompt("Ejercicio El Tour", "Ingrese cantidad de excursiones")
-        while cantidad_exc == None or cantidad_exc.indigit():
+        while cantidad_exc == None or cantidad_exc.isalpha():
             cantidad_exc = prompt("Ejercicio El Tour", "Ingrese cantidad de excursiones")
         excursiones_int = int(cantidad_exc)
         
@@ -95,11 +95,14 @@ class App(customtkinter.CTk):
         precio_barato = None
         tipo_mas_barato = ""
         promedio_precio = 0
-        exc_mas_seleccionada = None
+        #6
+        exc_caminata = 0
+        exc_vehiculo = 0
+        
         while contador_exc < excursiones_int:
             
             importe = prompt("Importe", "Ingrese su importe")
-            while importe == None or importe.indigit():
+            while importe == None or importe.isdigit():
                 importe = prompt("Importe", "Ingrese su importe")
             importe_int = int(importe)
             
@@ -115,17 +118,29 @@ class App(customtkinter.CTk):
                 precio_caro = importe_int
                 tipo_mas_caro = tipo_exc
             
+            if tipo_exc == "caminata":
+                exc_caminata += 1
+            else:
+                exc_vehiculo += 1    
+            
+            
             suma_precios = suma_precios + importe_int
             "actualizo el contador para seguir iterando de manera controlada"
-            contador_exc = contador_exc + 1
-
-    
-            
+            contador_exc += 1
+   
         promedio_precio = suma_precios / excursiones_int
+        
+        if exc_caminata == exc_vehiculo:
+            exc_seleccionada = f"Se seleccionó caminata y vehiculo la misma cantidad de veces"
+        elif exc_caminata > exc_vehiculo:
+            exc_seleccionada = "La excursión caminata fue más seleccionada que vehículo"
+        else:
+            exc_seleccionada = "La excursión vehículo fue más seleccionada que caminata"
         
         informe = f"La excursión más barata vale ${precio_barato} y es de tipo {tipo_mas_barato}\n\
             La excursión más cara vale ${precio_caro} y es de tipo {tipo_mas_caro}\n\
-            El promedio de precios de las excursiones es de ${promedio_precio}"
+            El promedio de precios de las excursiones es de ${promedio_precio}\n\
+            {exc_seleccionada}"
         mensaje= f"Usted es {nombre} tiene {edad} de edad y su género es {genero} y según su altura es {mensaje_altura}"
         
         alert("Ejercicio El tour", mensaje)

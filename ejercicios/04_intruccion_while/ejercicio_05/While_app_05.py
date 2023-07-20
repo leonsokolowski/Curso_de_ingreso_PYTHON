@@ -31,7 +31,7 @@ class App(customtkinter.CTk):
     def btn_validar_letra_on_click(self):
         letra = prompt("Ingrese letra", "Ingrese la letra U, T o N (en mayusculas)")
         
-        while letra is not ("U" or "T" or "N"):
+        while letra is not ("U" and "T" and "N"):
             alert("Error", "Tiene que ser la letra U, T o N en mayúsculas")
             letra = prompt("Ingrese letra", "Ingrese la letra U, T o N (en mayusculas)")        
         

@@ -65,12 +65,7 @@ class App(customtkinter.CTk):
             diferencia_negativos = contador_negativos - contador_positivos
             diferencia_str = f"Ingresó ({diferencia_negativos}) números negativos más que positivos."
             
-        mensaje = f"Usted ingreso ({contador_ceros}) veces el número 0.\n\
-            Ingreso ({contador_positivos}) veces números positivos, que sumados dan\n\
-            {suma_positivos}\n\
-            Ingreso ({contador_negativos}) veces números negativos, que sumados dan\n\
-            {suma_negativos}\n\
-            {diferencia_str}"
+        mensaje = f"Usted ingreso ({contador_ceros}) veces el número 0. Ingreso ({contador_positivos}) veces números positivos, que sumados dan {suma_positivos}. Ingreso ({contador_negativos}) veces números negativos, que sumados dan{suma_negativos}. {diferencia_str}"
         alert("Ejercicio While 10", mensaje)
 
 

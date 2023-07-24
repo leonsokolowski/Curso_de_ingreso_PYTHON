@@ -48,13 +48,37 @@ class App(customtkinter.CTk):
 
 
     def btn_validar_on_click(self):
-        apellido = self.txt_apellido.get()
-        edad = self.txt_edad.get()
-        tipo = self.combobox_tipo.get()
-        legajo = self.txt_legajo.get()
-        
-        alert(title="Alert", message="\nNombre " + str(apellido) + " \nEdad " + str(edad) + "\nEstado Civil " + str(tipo) + "\nLegajo " + str(legajo))
+        apellido = prompt("TP 5", "Ingrese su apellido")
+        while apellido == None or apellido == "" or apellido.isdigit():
+            alert("ERROR", "Apellido inválido. Ingreselo devuelta.")
+            apellido = prompt("TP 5", "Ingrese su apellido")
 
+        edad = prompt("TP 5", "Ingrese su edad")
+        while not (edad != None and edad != "" and (edad.isdigit() and (int(edad) > 17 and int(edad) < 91))):
+            alert("ERROR", "Edad inválida. Ingresela devuelta")
+            edad = prompt("TP 5", "Ingrese su edad")
+        else:
+            edad = int(edad)
+            
+        estado_civil = prompt("TP 5", "Ingrese su estado civil: soltero/a, casado/a, divorciado/a, viudo/a")
+        while not(estado_civil != None and estado_civil != "" and estado_civil.isalpha() or estado_civil == "Soltero/a" or estado_civil == "Casado/a" or estado_civil == "Divorciado/a" or estado_civil == "Viudo/a"):
+            alert("ERROR", "Estado civil inválido. Ingreselo devuelta")
+            estado_civil = prompt("TP 5", "Ingrese su estado civil: soltero/a, casado/a, divorciado/a, viudo/a")
+        
+        numero_legajo = prompt("TP 5", "Ingrese su número de legajo")
+        while not(numero_legajo != None and numero_legajo != "") or len(numero_legajo) > 4:
+            alert("ERROR", "Número de legajo inválido. Ingreselo devuelta")
+            numero_legajo = prompt("TP 5", "Ingrese su número de legajo")
+            
+        self.txt_apellido.delete(0, 150)
+        self.txt_apellido.insert(0, apellido)
+        self.txt_edad.delete(0, 150)
+        self.txt_edad.insert(0, edad)
+        # self.combobox_tipo.delete(0,150)
+        # self.combobox_tipo.insert(0, estado_civil)
+        self.txt_legajo.delete(0, 150)
+        self.txt_legajo.insert(0, numero_legajo)
+            
         
         
     

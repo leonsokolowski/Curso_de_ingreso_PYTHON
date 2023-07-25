@@ -58,7 +58,46 @@ class App(customtkinter.CTk):
         
 
     def btn_mostrar_on_click(self):
-        pass
+        #PUNTO A.
+        #Lengh -> len() -> ESTO ES FEO (Pero lo vamos a usar)
+        # largo_lista = len(self.lista_de_votos_por_candidato) 
+        # for item in range (largo_lista):                     
+        
+        #For each
+        #for cantidad_votos in self.lista_de_votos_por_candidato:  #<--- RECORRE CADA UNO DE LOS ELEMENTOS DE LA LISTA
+        
+        mayor_cantidad_votos = None 
+        nombre_candidato_mas_votos = ""
+        
+        largo_lista_votos = len(self.lista_de_votos_por_candidato)
+        
+        for i in range (largo_lista_votos):
+            if mayor_cantidad_votos == None or mayor_cantidad_votos < self.lista_de_votos_por_candidato [i]:
+                mayor_cantidad_votos = self.lista_de_votos_por_candidato [i]
+                nombre_candidato_mas_votos = self.lista_de_nombres [i]
+        
+        mensaje_a = f"El cantididato con mayor cantidad de votos es {nombre_candidato_mas_votos} con {mayor_cantidad_votos} votos."
+        print(mensaje_a)
+        
+        #PUNTO B.
+        menor_cantidad_votos: None
+        nombre_candidato_menos_votos = ""
+        edad_candidato_menos_votos = 0
+        
+        for j in range (largo_lista_votos):
+            if menor_cantidad_votos == None or menor_cantidad_votos > self.lista_de_votos_por_candidato [j]:
+                menor_cantidad_votos = self.lista_de_votos_por_candidato [j]
+                edad_candidato_menos_votos = self.lista_de_edades [j]
+                nombre_candidato_menos_votos = self.lista_de_nombres [j]
+        
+        mensaje_b = f"El candidato con menor cantidad de votos es {nombre_candidato_menos_votos}, tiene {edad_candidato_menos_votos} y tuvo {menor_cantidad_votos} votos."
+        print(mensaje_b)
+        
+        #PUNTO C.
+              
+        
+        
+            
     
     
 if __name__ == "__main__":

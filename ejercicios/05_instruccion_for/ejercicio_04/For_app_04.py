@@ -21,7 +21,15 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
+        
+        for index in range (1000):
+            numero = prompt("Ejercicio For 04", "Ingrese el número 9")
+            if numero == None or numero == "" or numero.isalpha() or int(numero) != 9:
+                alert("Error", "El numero debe ser 9")
+            else:
+                numero = int(numero)
+                alert("", "¡Bien hecho!")
+                break
         
     
 if __name__ == "__main__":

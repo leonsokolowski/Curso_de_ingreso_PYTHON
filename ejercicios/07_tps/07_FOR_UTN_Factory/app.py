@@ -39,7 +39,7 @@ class App(customtkinter.CTk):
 
 
     def btn_validar_on_click(self):
-        print("lalal")
+        pass
         
         
     

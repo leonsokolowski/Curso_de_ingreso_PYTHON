@@ -72,6 +72,9 @@ class App(customtkinter.CTk):
             continuar = question("", "¿Desea ingresar otro candidato?")     
 
         #c
+        if contador_candidatos == 0:
+            contador_candidatos = 1
+            
         promedio_edades = acumulador_edades // contador_candidatos
         
         mensaje = f"El nombre del candidato con más votos es {nombre_candidato_maximo}.\n\

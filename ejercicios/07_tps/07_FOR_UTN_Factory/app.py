@@ -39,7 +39,31 @@ class App(customtkinter.CTk):
 
 
     def btn_validar_on_click(self):
-        pass
+        
+        for i in range (11):
+            
+            nombre = prompt(None, "Ingrese su nombre")
+            
+            edad = int(prompt(None, "Ingrese su edad, debe ser mayor."))
+            while not(edad >= 18):
+                alert("ERROR", "Edad inválida, vuelva a ingresarla")
+                edad = int(prompt(None, "Ingrese su edad"))
+                
+            genero = prompt(None, "Ingrese su género: M, F o NB.")
+            while genero != "M" and genero != "F" and genero != "NB":
+                alert("ERROR", "Género inválido, vuelva a ingresarlo")
+                genero = prompt(None, "Ingrese su género")
+                
+            tecnologia = prompt(None, "Ingrese la tecnología que maneja: python, js o asp.net.")
+            while tecnologia != "python" and tecnologia != "js" and tecnologia != "asp.net":
+                alert("ERROR", "Tecnología inválida, vuelva a ingresarla")
+                tecnologia = prompt(None, "Ingrese la tecnología que maneja")
+            
+            puesto = prompt(None, "Ingrese el puesto al que aspira: jr, ssr o sr.")
+            while puesto != "jr" and puesto != "ssr" and puesto != "sr":
+                alert("ERROR", "Puesto inválido, vuelva a ingresarlo")
+                puesto = prompt(None, "Ingrese el puesto al que aspira: jr, ssr o sr.")
+            
         
         
     

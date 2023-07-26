@@ -58,7 +58,6 @@ class App(customtkinter.CTk):
         
 
     def btn_mostrar_on_click(self):
-        #PUNTO A.
         #Lengh -> len() -> ESTO ES FEO (Pero lo vamos a usar)
         # largo_lista = len(self.lista_de_votos_por_candidato) 
         # for item in range (largo_lista):                     
@@ -66,38 +65,44 @@ class App(customtkinter.CTk):
         #For each
         #for cantidad_votos in self.lista_de_votos_por_candidato:  #<--- RECORRE CADA UNO DE LOS ELEMENTOS DE LA LISTA
         
-        mayor_cantidad_votos = None 
-        nombre_candidato_mas_votos = ""
+        largo = len(self.lista_de_votos_por_candidato)
+        mayor_cantidad_de_votos = None
+        nombre_candidato_mayor_cantidad_de_votos = ''
+        menor_cantidad_votos = None
+        nombre_candidato_menor = ''
+        edad_candidato_menor = 0
+        acumulador_edades = 0
+        acumulador_votos = 0
         
-        largo_lista_votos = len(self.lista_de_votos_por_candidato)
-        
-        for i in range (largo_lista_votos):
-            if mayor_cantidad_votos == None or mayor_cantidad_votos < self.lista_de_votos_por_candidato [i]:
-                mayor_cantidad_votos = self.lista_de_votos_por_candidato [i]
-                nombre_candidato_mas_votos = self.lista_de_nombres [i]
-        
-        mensaje_a = f"El cantididato con mayor cantidad de votos es {nombre_candidato_mas_votos} con {mayor_cantidad_votos} votos."
-        print(mensaje_a)
-        
-        #PUNTO B.
-        menor_cantidad_votos: None
-        nombre_candidato_menos_votos = ""
-        edad_candidato_menos_votos = 0
-        
-        for j in range (largo_lista_votos):
-            if menor_cantidad_votos == None or menor_cantidad_votos > self.lista_de_votos_por_candidato [j]:
-                menor_cantidad_votos = self.lista_de_votos_por_candidato [j]
-                edad_candidato_menos_votos = self.lista_de_edades [j]
-                nombre_candidato_menos_votos = self.lista_de_nombres [j]
-        
-        mensaje_b = f"El candidato con menor cantidad de votos es {nombre_candidato_menos_votos}, tiene {edad_candidato_menos_votos} y tuvo {menor_cantidad_votos} votos."
-        print(mensaje_b)
-        
-        #PUNTO C.
-              
-        
-        
+        for i in range(largo):
+            #punto A
+            if mayor_cantidad_de_votos == None or mayor_cantidad_de_votos < self.lista_de_votos_por_candidato[i]:
+                mayor_cantidad_de_votos = self.lista_de_votos_por_candidato[i]
+                nombre_candidato_mayor_cantidad_de_votos = self.lista_de_nombres[i]
+            #punto A
             
+            #punto B
+            if menor_cantidad_votos == None or menor_cantidad_votos > self.lista_de_votos_por_candidato[i]:                  
+                menor_cantidad_votos = self.lista_de_votos_por_candidato[i]
+                edad_candidato_menor = self.lista_de_edades[i]
+                nombre_candidato_menor = self.lista_de_nombres[i]
+            #punto B
+            
+            #punto C
+            acumulador_edades += self.lista_de_edades[i]
+            #punto C
+            
+            #punto D
+            acumulador_votos += self.lista_de_votos_por_candidato[i]
+            #punto D
+        
+        #punto C
+        promedio_edades = acumulador_edades / largo
+        #punto C
+
+        mensaje_salida = f'El nombre del candidato con mas votos es: {nombre_candidato_mayor_cantidad_de_votos}, con {mayor_cantidad_de_votos}. El nombre del candidato con menos votos es: {nombre_candidato_menor}, tiene {edad_candidato_menor} años de edad y obtuvo una cantidad de {menor_cantidad_votos}. El promedio de edad entre todos los candidatos es de: {promedio_edades}. El total de votos emitidos es de: {acumulador_votos}'
+        
+        print(mensaje_salida) 
     
     
 if __name__ == "__main__":
@@ -105,3 +110,49 @@ if __name__ == "__main__":
     app.geometry("300x300")
     app.mainloop()
 
+        # #PUNTO A.
+        # mayor_cantidad_votos = None 
+        # nombre_candidato_mas_votos = ""
+        
+        # largo_lista_votos = len(self.lista_de_votos_por_candidato)
+        
+        # for i in range (largo_lista_votos):
+        #     if mayor_cantidad_votos == None or mayor_cantidad_votos < self.lista_de_votos_por_candidato [i]:
+        #         mayor_cantidad_votos = self.lista_de_votos_por_candidato [i]
+        #         nombre_candidato_mas_votos = self.lista_de_nombres [i]
+        
+        # mensaje_a = f"El cantididato con mayor cantidad de votos es {nombre_candidato_mas_votos} con {mayor_cantidad_votos} votos."
+        # print(mensaje_a)
+        
+        # #PUNTO B.
+        # menor_cantidad_votos: None
+        # nombre_candidato_menos_votos = ""
+        # edad_candidato_menos_votos = 0
+        
+        # for j in range (largo_lista_votos):
+        #     if menor_cantidad_votos == None or menor_cantidad_votos > self.lista_de_votos_por_candidato [j]:
+        #         menor_cantidad_votos = self.lista_de_votos_por_candidato [j]
+        #         edad_candidato_menos_votos = self.lista_de_edades [j]
+        #         nombre_candidato_menos_votos = self.lista_de_nombres [j]
+        
+        # mensaje_b = f"El candidato con menor cantidad de votos es {nombre_candidato_menos_votos}, tiene {edad_candidato_menos_votos} y tuvo {menor_cantidad_votos} votos."
+        # print(mensaje_b)
+        
+        # #PUNTO C.
+        # acumulador_edades = 0
+        # for k in range (largo_lista_votos):
+        #     acumulador_edades += self.lista_de_edades [k]
+        
+        # promedio_edades = acumulador_edades // len(self.lista_de_edades)
+        
+        # mensaje_c = f"El promedio de edades es {promedio_edades}"
+        # print(mensaje_c)
+        
+        # #PUNTO D.
+        # acumulador_votos = 0
+        
+        # for l in range (largo_lista_votos):
+        #     acumulador_votos += self.lista_de_votos_por_candidato
+            
+        # mensaje_d = f"La cantidad total de votos es de {acumulador_votos}"
+        # print(mensaje_d)

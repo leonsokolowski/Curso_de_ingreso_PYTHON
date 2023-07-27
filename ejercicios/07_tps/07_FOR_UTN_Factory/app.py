@@ -1,4 +1,8 @@
 '''
+nombre:León
+apellido:Sokolowski
+div: K
+
 UTN Software Factory está en la búsqueda de programadores para incorporar a su equipo de 
 trabajo. En las próximas semanas se realizará un exhaustivo proceso de selección. Para ello se 
 ingresarán los siguientes datos de los 10 postulantes para luego establecer distintas métricas 

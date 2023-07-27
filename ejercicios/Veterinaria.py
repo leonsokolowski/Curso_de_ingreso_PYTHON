@@ -35,11 +35,11 @@ class App(customtkinter.CTk):
         self.btn_mostrar = customtkinter.CTkButton(master=self, text="Mostrar Datos", command=self.btn_mostrar_on_click)
         self.btn_mostrar.grid(row=6, pady=20, columnspan=2, sticky="nsew")
         
-        self.lista_de_nombres = ["Eva", "Lila", "Zoe", "Bobi", "Ichi"]
-        self.lista_de_precios = [2500, 2200, 1000, 1500, 950]
-        self.lista_de_razas = ["ovejero", "ovejero", "ovejero", "siberiano", "caniche"]
-        self.lista_de_edades = [11, 9, 14, 6, 4]
-        self.lista_de_pesos = [35, 39, 30, 27, 25]
+        self.lista_de_nombres = []
+        self.lista_de_precios = []
+        self.lista_de_razas = []
+        self.lista_de_edades = []
+        self.lista_de_pesos = []
         
         #"Eva", "Lila", "Zoe", "Bobi", "Ichi"
         #2500, 2200, 1000, 1500, 950
@@ -116,9 +116,7 @@ class App(customtkinter.CTk):
             facturacion_bruta += self.lista_de_precios[i]
             
             #e
-            # if [i] in self.lista_de_nombres:
-            #     contador_nombres_repetidos += 1
-            #     self.lista_de_precios [i] * 2
+            
                 
                 
                 
@@ -137,16 +135,6 @@ class App(customtkinter.CTk):
             facturacion_final = facturacion_bruta
             mensaje_facturacion_final = f"Tendrá una facturación final de {facturacion_final}"
             
-        # #e
-        # if contador_nombres_repetidos < 1:
-        #     descuento = (self.lista_de_precios [i] *15) / 100
-        #     precio_con_descuento = self.lista_de_precios [i] - descuento
-        # elif contador_nombres_repetidos > 2 and contador_nombres_repetidos < 6:
-        #     descuento = (self.lista_de_precios [i] *35) / 100
-        #     precio_con_descuento = self.lista_de_precios [i] - descuento
-        # else:
-        #     descuento = (self.lista_de_precios [i] *50) / 100
-        #     precio_con_descuento = self.lista_de_precios [i] - descuento
         
         mensaje = f"El perro más pesado es {nombre_perro_mas_pesado} con {peso_mas_pesado}.\n\
             Hay un {porcentaje_ovejeros}% de ovejeros, un {porcentaje_caniches}% de caniches y un {porcentaje_siberianos}% de siberianos.\n\

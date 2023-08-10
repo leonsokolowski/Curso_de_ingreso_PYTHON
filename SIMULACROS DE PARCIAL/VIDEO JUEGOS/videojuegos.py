@@ -43,7 +43,7 @@ class App(customtkinter.CTk):
         self.lista_nombres = ["Borderlands", "Overwatch", "Pokemon", "Doom", "Apex Legends"]
         self.lista_años_emicion = [2009, 2018, 1997, 2016, 2019]
         self.lista_tipos = ["offline", "online", "offline", "offline", "online"]
-        self.lista_costos = [1500, 7000, 2000, 4000, 501]
+        self.lista_costos = [1500, 7000, 2000, 4000, 500]
 
     def btn_cargar_datos_on_click(self):
         
@@ -107,7 +107,7 @@ class App(customtkinter.CTk):
                 nombre_videojuego_mas_caro = self.lista_nombres[i]
             
             if costo_videojuego_mas_barato == None or costo_videojuego_mas_barato > self.lista_costos[i]:
-                costo_videojuego_mas_barato == self.lista_costos[i]
+                costo_videojuego_mas_barato = self.lista_costos[i]
                 nombre_videojuego_mas_barato = self.lista_nombres[i]
             
             #b y d

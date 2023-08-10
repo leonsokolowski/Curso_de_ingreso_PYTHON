@@ -26,6 +26,9 @@ class App(customtkinter.CTk):
 #   .lower() ---> Cualquier caracter que se ingrese será tomado como una minúscula.
 #   .upper() ---> Cualquier caracter que se ingrese será tomado como una mayúscula.
 
+#    Para validar a la negativa los tipos por ejemplo, ponemos "while tipo == None or tipo == "" or (tipo != "valor" and tipo != "valor"):"
+#    Para validar a la positiva los tipos por ejemplo, ponemos "while tipo != None and tipo != "" and (tipo == "valor" or tipo == "valor"):"
+
     nombre = prompt(None, "aca_va_la_pregunta")
     while nombre == None or nombre == "":
         alert("ERROR", "Nombre inválido, ingreselo devuelta")
@@ -35,12 +38,13 @@ class App(customtkinter.CTk):
     while edad == None or edad == "":
         alert("ERROR", "Edad inválida, ingresela devuelta")
         edad = prompt(None, "aca_va_la_pregunta")
+    edad = int(edad)
     
     tipo = prompt(None, "aca_va_la_pregunta")
-    tipo = tipo.lower()
-    while tipo == None or tipo == "":
+    while tipo == None or tipo == "" or (tipo.lower() != "" and tipo.lower() != ""):
         alert("ERROR", "Tipo inválido, ingreselo devuelta")
-        tipo = prompt(None, "aca_va_la_pregunta") 
+        tipo = prompt(None, "aca_va_la_pregunta")
+     
 #--------------------------------------------------------------------------------------------------------------------------------------------------
 
 if __name__ == "__main__":
